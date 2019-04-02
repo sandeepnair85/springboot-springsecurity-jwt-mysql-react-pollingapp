@@ -19,6 +19,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.NaturalId;
 
+import com.example.polls.model.audit.DateAudit;
+
 @Entity
 @Table(name = "users", uniqueConstraints = {
     @UniqueConstraint(columnNames = {
@@ -28,7 +30,7 @@ import org.hibernate.annotations.NaturalId;
         "email"
     })
 })
-public class User {
+public class User extends DateAudit{
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
